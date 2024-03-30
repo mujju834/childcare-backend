@@ -72,6 +72,9 @@ cron.schedule('0 0 * * *', async () => {
 //         res.status(500).send({ message: 'Server error' });
 //     }
 // });
+
+
+
 router.post('/register', async (req, res) => {
     try {
         const { role, email, password, childInfo, qualifications, adminCode, facilityName, facilityLicenseNumber, phone } = req.body;
@@ -125,6 +128,10 @@ router.post('/register', async (req, res) => {
 });
 
 
+router.get('/greet', async (req, res) => {
+    console.log('Greeting endpoint hit'); // Optional: Log that the endpoint was hit
+    res.status(200).send({ message: 'Hello Mujju' }); // Send back the greeting message
+});
 
 
 
